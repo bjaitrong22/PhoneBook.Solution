@@ -9,14 +9,14 @@ namespace PhoneBook
 
     public static void AddContact()
     {
-      Console.WriteLine("NEW CONTACT");
-      Console.WriteLine("Enter a New Contact name");
+      Console.WriteLine("\nNEW CONTACT");
+      Console.WriteLine("\nEnter a New Contact name\n");
       string name = Console.ReadLine();
-      Console.WriteLine("Enter a new contact phone number");
+      Console.WriteLine("\nEnter a new contact phone number\n");
       string number = Console.ReadLine();
       if(phoneNumbers.ContainsKey(name))
       {
-        Console.WriteLine("That person is already in your phonebook. their number is " + phoneNumbers[name]);
+        Console.WriteLine("\nThat person is already in your phonebook. their number is " + phoneNumbers[name] + "\n");
       }
       else
       {
@@ -26,17 +26,17 @@ namespace PhoneBook
 
     public static void LookUpContact()
     {
-      Console.WriteLine("CONTACT LOOKUP");
-      Console.WriteLine("Whose number would you like to look up?");
+      Console.WriteLine("\nCONTACT LOOKUP");
+      Console.WriteLine("\nWhose number would you like to look up?\n");
       string friend = Console.ReadLine();
       if (phoneNumbers.ContainsKey(friend))
       {
         string value = phoneNumbers[friend];
-        Console.WriteLine(friend + "\'s phone number is " + value);
+        Console.WriteLine("\n" + friend + "\'s phone number is " + value +"\n");
       }
       else
       {
-        Console.WriteLine("That person is not in your phone book.");
+        Console.WriteLine("\nThat person is not in your phone book.\n");
       }
     }
   }
