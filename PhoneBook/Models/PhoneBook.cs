@@ -7,9 +7,9 @@ namespace PhoneBook
   {
     public static Dictionary<string,string> phoneNumbers = new Dictionary<string,string>();
 
-    static void AddContact()
+    public static void AddContact()
     {
-      Console.WriteLine("New Contact");
+      Console.WriteLine("NEW CONTACT");
       Console.WriteLine("Enter a New Contact name");
       string name = Console.ReadLine();
       Console.WriteLine("Enter a new contact phone number");
@@ -23,7 +23,22 @@ namespace PhoneBook
         phoneNumbers.Add(name, number);
       }
     }
-  }
 
+    public static void LookUpContact()
+    {
+      Console.WriteLine("CONTACT LOOKUP");
+      Console.WriteLine("Whose number would you like to look up?");
+      string friend = Console.ReadLine();
+      if (phoneNumbers.ContainsKey(friend))
+      {
+        string value = phoneNumbers[friend];
+        Console.WriteLine(friend + "\'s phone number is " + value);
+      }
+      else
+      {
+        Console.WriteLine("That person is not in your phone book.");
+      }
+    }
+  }
 }
 
